@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>map function</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  </head>
+
+  <body onload="mapload({p:},{c:},{b:})">
+    <div id="map"></div>
+
+    <script type="text/javascript">
+      function initMap(p, c, b) {
+
+        var p = [{lat: 47.61096, lng: -122.34045}, {lat: 47.61175, lng: -122.33938}, {lat: 47.61275, lng: -122.33726}, {lat: 47.61615, lng: -122.32908}, {lat: 47.61159, lng: -122.33089}, {lat: 47.61035, lng: -122.33113}, {lat: 47.60954, lng: -122.33116}, {lat: 47.60861, lng: -122.3309}, {lat: 47.60773, lng: -122.3304}, {lat: 47.6051, lng: -122.32817}, {lat: 47.60257, lng: -122.33426}, {lat: 47.60325, lng: -122.33493}, {lat: 47.60274, lng: -122.33639}, {lat: 47.60248, lng: -122.33692}, {lat: 47.60248, lng: -122.33936}, {lat: 47.6024, lng: -122.34}, {lat: 47.60281, lng: -122.33998}, {lat: 47.60292, lng: -122.33959}, {lat: 47.60368, lng: -122.33959}, {lat: 47.6039, lng: -122.33975}, {lat: 47.60395, lng: -122.34011}, {lat: 47.60436, lng: -122.34051}, {lat: 47.60465, lng: -122.34054}, {lat: 47.60468, lng: -122.34088}, {lat: 47.60523, lng: -122.34087}, {lat: 47.60524, lng: -122.34193}, {lat: 47.60629, lng: -122.34285}, {lat: 47.60637, lng: -122.34212}, {lat: 47.60629, lng: -122.34201}, {lat: 47.60636, lng: -122.34181}, {lat: 47.60645, lng: -122.34163}, {lat: 47.60662, lng: -122.3415}, {lat: 47.60676, lng: -122.34155}, {lat: 47.60691, lng: -122.3422}, {lat: 47.60717, lng: -122.34264}, {lat: 47.60709, lng: -122.34284}, {lat: 47.60725, lng: -122.34299}, {lat: 47.60726, lng: -122.34382}, {lat: 47.60753, lng: -122.34427}, {lat: 47.60838, lng: -122.34535}, {lat: 47.60861, lng: -122.34572}, {lat: 47.60861, lng: -122.34595}, {lat: 47.60914, lng: -122.34672}, {lat: 47.60919, lng: -122.34619}, {lat: 47.60947, lng: -122.34659}, {lat: 47.60974, lng: -122.34624}, {lat: 47.60986, lng: -122.34645}, {lat: 47.61249, lng: -122.34306}, {lat: 47.61096, lng: -122.34045}]
+	
+        var b = {north:47.61615, south:47.6024, west:-122.34672, east:-122.32817}
+	
+        var c = {lat:47.609275, lng:-122.337445}
+		
+        var everythingElse = [ // covers the (mercator projection) world
+          new google.maps.LatLng(85, 180),
+          new google.maps.LatLng(85, 90),
+          new google.maps.LatLng(85, 0),
+          new google.maps.LatLng(85, -90),
+          new google.maps.LatLng(85, -180),
+          new google.maps.LatLng(0, -180),
+          new google.maps.LatLng(-85, -180),
+          new google.maps.LatLng(-85, -90),
+          new google.maps.LatLng(-85, 0),
+          new google.maps.LatLng(-85, 90),
+          new google.maps.LatLng(-85, 180),
+          new google.maps.LatLng(0, 180),
+          new google.maps.LatLng(85, 180)
+        ];
+
+
+        // Define the LatLng coordinates for the polygon's path.
+        var triangleCoords = p;
+
+        const BOUNDS = b;
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: c,
+          mapId: "3782c2d2aeaec7e5",
+          restriction: {
+            latLngBounds: BOUNDS,
+            strictBounds: false,
+          },
+          zoom: 15,
+        });
+
+
+        bermudaTriangle = new google.maps.Polygon({
+          paths: [everythingElse, triangleCoords],
+          strokeOpacity: 0,
+          strokeWeight: 0,
+          fillColor: "#fff",
+          fillOpacity: 1
+        });
+
+        bermudaTriangle.setMap(map);
+      }
+
+      }
+
+    </script>
+  </body>
+
+</html>
