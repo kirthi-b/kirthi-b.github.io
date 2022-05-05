@@ -21,7 +21,6 @@ a:link:not(:hover) {
 <h1><a href="https://github.com/observablehq/examples">Observable Example</a>: <a href="https://github.com/observablehq/examples/tree/main/standalone">Standalone</a></h1>
 <p>This example demonstrates a standalone Observable notebook with no external dependencies.</p>
 <h2>The most populous cities in the world, 1575–2020</h2>
-<div name="viewof replay"></div>
 <div name="chart"></div>
 <p>Credit: <a href="https://observablehq.com/@d3/bar-chart-race">Mike Bostock</a> · Data: <a href="https://gist.githubusercontent.com/johnburnmurdoch/4199dbe55095c3e13de8d5b2e5e5307a">John Burn–Murdoch</a></p>
 <script src="d3.js"></script>
@@ -45,9 +44,6 @@ const main = runtime.module(notebook, name => {
     return new Inspector(document.querySelector(`[name='${name}']`));
   }
 });
-
-// Redefine the “data” cell to use our CSV file (in the same format).
-main.redefine("data", d3.csv("./cities.csv", d3.autoType));
 
 // Redefine the “k” cell to disable tweening between keyframes. (This dataset is
 // already interpolated.)
