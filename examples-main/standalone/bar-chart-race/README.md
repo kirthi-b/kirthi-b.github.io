@@ -1,12 +1,12 @@
-# Bar Chart Race
+# Sankey With Animated Gradients
 
-https://observablehq.com/@d3/bar-chart-race@3048
+https://observablehq.com/@kirthi-b/the-surveilled-city@146
 
 View this notebook in your browser by running a web server in this folder. For
 example:
 
 ~~~sh
-python -m SimpleHTTPServer
+npx http-server
 ~~~
 
 Or, use the [Observable Runtime](https://github.com/observablehq/runtime) to
@@ -14,14 +14,14 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@4
-npm install https://api.observablehq.com/@d3/bar-chart-race.tgz?v=3
+npm install https://api.observablehq.com/d/8badf10c846b102e@146.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:
 
 ~~~js
 import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "@d3/bar-chart-race";
+import define from "@kirthi-b/the-surveilled-city";
 ~~~
 
 To log the value of the cell named “foo”:

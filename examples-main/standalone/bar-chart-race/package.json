@@ -1,11 +1,11 @@
 {
-  "name": "@d3/bar-chart-race",
-  "main": "3ff9fa2c6593d814@3048.js",
-  "version": "3048.0.0",
-  "homepage": "https://observablehq.com/@d3/bar-chart-race",
+  "name": "@kirthi-b/the-surveilled-city",
+  "main": "8badf10c846b102e@146.js",
+  "version": "146.0.0",
+  "homepage": "https://observablehq.com/@kirthi-b/the-surveilled-city",
   "author": {
-    "name": "D3",
-    "url": "https://observablehq.com/@d3"
+    "name": "Kirthi Balakrishnan",
+    "url": "https://observablehq.com/@kirthi-b"
   },
   "type": "module",
   "peerDependencies": {
