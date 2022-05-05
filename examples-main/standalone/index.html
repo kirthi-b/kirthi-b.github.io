@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <title>Bar Chart Race</title>
-<<<<<<< HEAD:examples-main/standalone/bar-chart-race/index.html
-<link rel="stylesheet" type="text/css" href="./inspector.css">
-<body>
-=======
 <style>
 
 :root {
@@ -29,10 +25,18 @@ a:link:not(:hover) {
 <div name="chart"></div>
 <p>Credit: <a href="https://observablehq.com/@d3/bar-chart-race">Mike Bostock</a> · Data: <a href="https://gist.githubusercontent.com/johnburnmurdoch/4199dbe55095c3e13de8d5b2e5e5307a">John Burn–Murdoch</a></p>
 <script src="d3.js"></script>
->>>>>>> aaf359da35ba04c467ec4bad9c053c72b979b4b0:sankey-with-animated-gradients/index.html
 <script type="module">
 
 import {Runtime, Library, Inspector} from "./runtime.js";
-import notebook from "./index.js";
+import notebook from "./bar-chart-race/index.js";
+
+// Initialize the Observable Runtime, telling it to use our local copy of D3
+// rather than loading one from a CDN.
+const runtime = new Runtime(new Library(name => {
+  switch (name) {
+    case "d3@6": return d3;
+  }
+}));
+
 
 </script>
