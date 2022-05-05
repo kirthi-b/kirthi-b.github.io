@@ -38,5 +38,19 @@ const runtime = new Runtime(new Library(name => {
   }
 }));
 
+// Show the output of the “chart” and “viewof replay” cells in the DIV elements
+// with the corresponding name.
+const main = runtime.module(notebook, name => {
+  if (["chart", "viewof replay"].includes(name)) {
+    return new Inspector(document.querySelector(`[name='${name}']`));
+  }
+});
+
+// Redefine the “data” cell to use our CSV file (in the same format).
+main.redefine("data", d3.csv("./cities.csv", d3.autoType));
+
+// Redefine the “k” cell to disable tweening between keyframes. (This dataset is
+// already interpolated.)
+main.redefine("k", 1);
 
 </script>
