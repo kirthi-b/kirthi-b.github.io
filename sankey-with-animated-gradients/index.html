@@ -1,9 +1,33 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Bar Chart Race</title>
+<style>
+
+:root {
+  --sans-serif: sans-serif;
+}
+
+body {
+  max-width: 960px;
+  margin: 1em auto;
+  font-family: var(--sans-serif);
+}
+
+a:link:not(:hover) {
+  text-decoration: none;
+}
+
+</style>
+<h1><a href="https://github.com/observablehq/examples">Observable Example</a>: <a href="https://github.com/observablehq/examples/tree/main/standalone">Standalone</a></h1>
+<p>This example demonstrates a standalone Observable notebook with no external dependencies.</p>
+<h2>The most populous cities in the world, 1575–2020</h2>
+<div name="viewof replay"></div>
+<div name="chart"></div>
+<p>Credit: <a href="https://observablehq.com/@d3/bar-chart-race">Mike Bostock</a> · Data: <a href="https://gist.githubusercontent.com/johnburnmurdoch/4199dbe55095c3e13de8d5b2e5e5307a">John Burn–Murdoch</a></p>
+<script src="d3.js"></script>
 <script type="module">
 
-import define from "./index.js";
 import {Runtime, Library, Inspector} from "./runtime.js";
-
-const runtime = new Runtime();
-const main = runtime.module(define, Inspector.into(document.body));
+import notebook from "./bar-chart-race/index.js";
 
 </script>
