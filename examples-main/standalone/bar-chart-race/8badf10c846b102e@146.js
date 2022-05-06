@@ -4,7 +4,7 @@ md`# Sankey With Animated Gradients
 Hover over a node to see the gradient animate.`
 )}
 
-function _svg(d3,DOM,width,height,graph,margin,format,sankey,arrow,duration)
+function chart(d3,DOM,width,height,graph,margin,format,sankey,arrow,duration)
 {
   const svg = d3.select(DOM.svg(width, height));
   
